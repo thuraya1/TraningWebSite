@@ -1,0 +1,28 @@
+
+<mat-toolbar>
+  
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Training Web Site</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+  <br>
+  <button (click)="CreateNewCourse()">Create New Course</button>
+  <div class=container>
+    <div class="cards">
+<app-cours-cards *ngFor ="let card of homeService.data" [couresid]="card.couresid"
+[coursename]="card.coursename" [price]="card.price" (openProfile)="goToProfile()" ></app-cours-cards>
+</div>
+</div>
+
+<!-- <h1>{{homeService.message}}</h1>
+<h2>{{numberActive}}</h2>
+
+<h1>The Number Of Customer is:{{homeService.selectedCourse.num}}</h1> -->

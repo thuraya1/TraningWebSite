@@ -1,0 +1,69 @@
+
+<app-navbar></app-navbar>
+<div class="container">
+
+    <div class="loginCard">
+
+        <div class="form">
+
+            <form class="example-form">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+
+                  <mat-label>Email</mat-label>
+
+                  <input type="email" matInput [formControl]="auth.emailFormControl" placeholder="Ex. pat@example.com">
+
+                  <mat-error *ngIf="auth.emailFormControl.hasError('email') && !auth.emailFormControl.hasError('required')">
+
+                    Please enter a valid email address
+
+                  </mat-error>
+
+                   <mat-error *ngIf="auth.emailFormControl.hasError('required')">
+
+                    Email is <strong>required</strong>
+
+                  </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+
+                    <mat-label>Password</mat-label>
+
+                    <input type="password"  matInput [formControl]="auth.passwordFormControl" >
+
+                    <mat-error *ngIf="auth.passwordFormControl.hasError('minlength') && !auth.passwordFormControl.hasError('required')">
+
+                     Please Enter Strong Password
+
+                    </mat-error>
+
+                    <mat-error *ngIf="auth.passwordFormControl.hasError('required')">
+
+                      Password is <strong>required</strong>
+
+                    </mat-error>
+
+                  </mat-form-field>
+
+
+
+                <button (click)="auth.submit()" [disabled]=!auth.emailFormControl.valid||!auth.passwordFormControl.valid>
+                  Login
+                  
+             
+                  </button>
+<!-- 
+<h1 *ngIf="showMessage">This is message to show</h1>
+<button (click)="toggleShowMessage()">Toggle</button> -->
+<p (click)="gotToRegister()">Create new Account</p>
+              </form>
+              <h1>{{home.message}}</h1>
+
+  </div>
+
+</div>
+
+</div>

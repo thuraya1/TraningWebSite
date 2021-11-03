@@ -1,0 +1,80 @@
+<h2 mat-dialog-title>Create New Course</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="formGroup"  >
+        <mat-form-field class="example-full-width" appearance="fill" >
+    
+            <mat-label  >Course Name</mat-label>
+    
+            <input type="text" matInput formControlName="coursename" style=" margin-left: 8px;">
+
+          </mat-form-field>
+    
+    
+        <mat-form-field class="example-full-width" appearance="fill">
+    
+            <mat-label>Price</mat-label>
+    
+            <input type="Number" matInput formControlName="price" >
+    
+            
+    
+             <mat-error *ngIf="formGroup.controls.price.hasError('required')">
+    
+              Price is <strong>required</strong>
+    
+            </mat-error>
+    
+          </mat-form-field>
+    
+          <mat-form-field class="example-full-width" appearance="fill">
+    
+              <mat-label>Start At</mat-label>
+    
+              <input type="text"  matInput formControlName="startdate" >
+    
+              
+    
+              <mat-error *ngIf="formGroup.controls.startdate.hasError('required')">
+    
+                StartAt is <strong>required</strong>
+    
+              </mat-error>
+    
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width" appearance="fill">
+    
+                <mat-label>End At</mat-label>
+        
+                <input type="text" matInput formControlName="enddate" >
+    
+        
+                 <mat-error *ngIf="formGroup.controls.enddate.hasError('required')">
+        
+                  EndAt is <strong>required</strong>
+        
+                </mat-error> 
+        
+              </mat-form-field >
+              <mat-form-field class="example-full-width" appearance="fill">
+    
+                <mat-label>levelid</mat-label>
+        
+                <input type="Number" matInput formControlName="levelid" >
+    
+        
+                 <mat-error *ngIf="formGroup.controls.levelid.hasError('required')">
+        
+                    levelid is <strong>required</strong>
+        
+                </mat-error> 
+        
+              </mat-form-field>
+    
+              
+            </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button [disabled]="!formGroup.valid" mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="create()">Save</button>
+</mat-dialog-actions>

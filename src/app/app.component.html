@@ -1,0 +1,20 @@
+<!-- <h1>{{title}}</h1>
+<h1>{{name}}</h1>
+<h1>{{email}}</h1>
+<h1>{{salary*12}}</h1>1
+Read Event , Input Event
+<input type="text" placeholder="Enter your name" [(ngModel)]='name' (ngModelChange)="HandleInput($event)" >
+<input type="text" placeholder="Enter your Email" [(ngModel)] ='email'>
+<input type="text" placeholder="Enter your Salary" [(ngModel)] ='salary'>
+<input type="text" placeholder="Enter your Annual Salary" [(ngModel)] ='salary' >
+
+<button (click)="clear()"> Clear Data</button>
+
+
+<h1>Current Name is :{{name}}</h1>
+<h1>Current Email is :{{email}}</h1>
+<h1>Current Salary is :{{salary}}</h1>
+<h1>Current Annual Salary is :{{salary*12}}</h1> -->
+<router-outlet></router-outlet>
+
+<ngx-spinner bdColor = "rgba(150,104,104,0.8)" size = "medium" color = "#983737" type = "ball-spin" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>

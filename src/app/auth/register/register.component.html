@@ -1,0 +1,87 @@
+<div class="container">
+ <div class="loginCard">
+<form [formGroup]="registerForm"  (submit)="submit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+
+        <mat-label>Full Name</mat-label>
+
+        <input type="text" matInput formControlName="fullName" placeholder="your name">
+
+
+         <mat-error *ngIf="registerForm.controls.fullName.hasError('required')">
+
+          FullName is <strong>required</strong>
+
+        </mat-error>
+
+      </mat-form-field>
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+
+        <mat-label>Email</mat-label>
+
+        <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+
+        <mat-error *ngIf="registerForm.controls.email.hasError('email') && !registerForm.controls.email.hasError('required')">
+
+          Please enter a valid email address
+
+        </mat-error>
+
+         <mat-error *ngIf="registerForm.controls.email.hasError('required')">
+
+          Email is <strong>required</strong>
+
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+
+          <mat-label>Password</mat-label>
+
+          <input type="password"  matInput formControlName="password" >
+
+          <mat-error *ngIf="registerForm.controls.password.hasError('minlength') && !registerForm.controls.password.hasError('required')">
+
+           Please Enter Strong Password
+
+          </mat-error>
+
+          <mat-error *ngIf="registerForm.controls.password.hasError('required')">
+
+            Password is <strong>required</strong>
+
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+
+            <mat-label>Address</mat-label>
+    
+            <input type="text" matInput formControlName="address" >
+
+    
+             <mat-error *ngIf="registerForm.controls.address.hasError('required')">
+    
+              Address is <strong>required</strong>
+    
+            </mat-error> 
+    
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+
+            <mat-label>Phone Number</mat-label>
+    
+            <input type="number" matInput formControlName="phoneNumber" >
+    
+          </mat-form-field>
+<button type="submit" [disabled]="!registerForm.valid">Register</button>
+
+<p (click)="goTlogin()">Already have Account</p>
+</form>
+</div>
+</div>
